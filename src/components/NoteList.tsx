@@ -56,6 +56,17 @@ export const NoteList: React.FC<NoteListProps> = ({
                 key={note.id}
                 type="button"
                 onClick={() => onSelect(note.id)}
+                onPointerDown={(e) => {
+                  const el = e.currentTarget;
+                  el.classList.remove('animate-touch-pop');
+                  void el.offsetWidth;
+                  el.classList.add('animate-touch-pop');
+                }}
+                onAnimationEnd={(e) => {
+                  if (e.animationName === 'touch-pop') {
+                    e.currentTarget.classList.remove('animate-touch-pop');
+                  }
+                }}
                 style={{ animationDelay: `${Math.min(index, 10) * 30}ms` }}
                 className={`group liquid-surface animate-card-in w-full rounded-xl border p-4 text-left transition-all duration-240 ${
                   isActive
