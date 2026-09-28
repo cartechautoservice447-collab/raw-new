@@ -70,7 +70,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
               type="button"
               aria-label="Settings"
               onClick={onOpenSettings}
-              className="rounded-lg border border-white/5 bg-white/[0.04] p-2.5 text-muted-foreground transition-colors hover:text-foreground"
+              className="rounded-lg border border-white/5 bg-white/[0.04] p-2.5 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97]"
             >
               <Settings className="h-4 w-4" />
             </button>
@@ -78,7 +78,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
               type="button"
               aria-label="Log out"
               onClick={() => void signOut()}
-              className="rounded-lg border border-white/5 bg-white/[0.04] p-2.5 text-muted-foreground transition-colors hover:text-destructive"
+              className="rounded-lg border border-white/5 bg-white/[0.04] p-2.5 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-destructive active:scale-[0.97]"
             >
               <LogOut className="h-4 w-4" />
             </button>
@@ -93,7 +93,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           <button
             type="button"
             onClick={() => setIsAddModalOpen(true)}
-            className="flex items-center gap-2 rounded-lg border border-white/10 bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99]"
+            className="animate-pulse-glow flex items-center gap-2 rounded-lg border border-white/10 bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.015] active:scale-[0.985]"
           >
             <Plus className="h-4 w-4" />
             <span>Add New Course</span>
@@ -121,8 +121,8 @@ export const Dashboard: React.FC<DashboardProps> = ({
                     onOpenCourse(course.id);
                   }
                 }}
-                style={{ animationDelay: `${index * 45}ms` }}
-                className="glass-panel animate-panel-in group relative cursor-pointer overflow-hidden rounded-2xl p-5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.015] hover:border-white/20"
+                style={{ animationDelay: `${index * 35}ms` }}
+                className="glass-panel liquid-surface animate-panel-in group relative cursor-pointer overflow-hidden rounded-2xl p-5 text-left transition-all duration-240 hover:-translate-y-0.5 hover:scale-[1.01] hover:border-white/15 hover:bg-white/[0.06] active:scale-[0.99]"
               >
                 {/* Delete course button on hover */}
                 <button
@@ -132,7 +132,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                     e.stopPropagation();
                     setCourseToDelete(course);
                   }}
-                  className="absolute right-3 top-3 z-10 rounded-lg border border-white/5 bg-white/[0.06] p-1.5 text-muted-foreground opacity-0 backdrop-blur-md transition-all duration-200 hover:border-destructive/30 hover:text-destructive group-hover:opacity-100"
+                  className="absolute right-3 top-3 z-10 rounded-lg border border-white/5 bg-white/[0.06] p-1.5 text-muted-foreground opacity-0 backdrop-blur-md transition-all duration-200 hover:border-destructive/30 hover:text-destructive group-hover:opacity-100 active:scale-95"
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                 </button>
@@ -157,7 +157,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                   <span className="text-[0.7rem] text-muted-foreground/70">
                     {latestUpdate ? `Last edited ${formatRelativeTime(latestUpdate)}` : 'No notes yet'}
                   </span>
-                  <span className="flex items-center gap-1.5 text-[0.7rem] text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-foreground group-hover:opacity-100">
+                  <span className="flex items-center gap-1.5 text-[0.7rem] text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:text-foreground group-hover:opacity-100">
                     <span>Open Workspace</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>
@@ -186,7 +186,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 onChange={(e) => setCourseTitle(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleCreateCourse()}
                 placeholder="Course title (e.g. CS50P — Python)"
-                className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-white/15 focus:outline-none"
+                className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors duration-200 focus:border-white/15 focus:outline-none"
               />
               <input
                 value={courseCategory}
@@ -200,14 +200,14 @@ export const Dashboard: React.FC<DashboardProps> = ({
               <button
                 type="button"
                 onClick={() => setIsAddModalOpen(false)}
-                className="rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-muted-foreground transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95"
               >
                 Cancel
               </button>
               <button
                 type="button"
                 onClick={handleCreateCourse}
-                className="rounded-lg border border-white/10 bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.02]"
+                className="rounded-lg border border-white/10 bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.015] active:scale-[0.985]"
               >
                 Create
               </button>
@@ -237,7 +237,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
               <button
                 type="button"
                 onClick={handleConfirmDelete}
-                className="rounded-lg border border-destructive/30 bg-destructive/20 px-4 py-2 text-sm font-medium text-destructive transition-transform hover:bg-destructive hover:text-destructive-foreground hover:scale-[1.02]"
+                className="rounded-lg border border-destructive/30 bg-destructive/20 px-4 py-2 text-sm font-medium text-destructive transition-all duration-200 hover:bg-destructive hover:text-destructive-foreground hover:scale-[1.015] active:scale-[0.985]"
               >
                 Delete
               </button>
