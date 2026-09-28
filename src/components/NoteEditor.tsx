@@ -113,7 +113,7 @@ export const NoteEditor: React.FC<NoteEditorProps> = ({
             type="button"
             onClick={onBack}
             aria-label="Back to notes"
-            className="rounded-lg border border-white/5 bg-white/[0.04] p-2 text-muted-foreground transition-colors hover:text-foreground lg:hidden"
+            className="rounded-lg border border-white/5 bg-white/[0.04] p-2 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97] lg:hidden"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
           </button>
@@ -130,7 +130,7 @@ export const NoteEditor: React.FC<NoteEditorProps> = ({
           <select
             value={note.collectionId ?? ''}
             onChange={(e) => onChange({ collectionId: e.target.value || null })}
-            className="rounded-lg border border-white/5 bg-white/[0.04] px-2.5 py-1.5 text-xs text-muted-foreground focus:border-white/15 focus:outline-none"
+            className="rounded-lg border border-white/5 bg-white/[0.04] px-2.5 py-1.5 text-xs text-muted-foreground transition-colors duration-200 focus:border-white/15 focus:outline-none"
           >
             <option value="" className="bg-[#12131a] text-foreground">No collection</option>
             {collections.map((col) => (
@@ -144,7 +144,7 @@ export const NoteEditor: React.FC<NoteEditorProps> = ({
             type="button"
             aria-label="Favorite"
             onClick={onToggleFavorite}
-            className="rounded-lg border border-white/5 bg-white/[0.04] p-2 text-muted-foreground transition-colors hover:text-foreground"
+            className="rounded-lg border border-white/5 bg-white/[0.04] p-2 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97]"
           >
             <Star
               className={`h-3.5 w-3.5 ${
@@ -171,7 +171,7 @@ export const NoteEditor: React.FC<NoteEditorProps> = ({
             type="button"
             aria-label="Bold"
             onClick={() => handleWrap('**', '**', 'bold text')}
-            className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-white/[0.06] hover:text-foreground"
+            className="rounded-md p-2 text-muted-foreground transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95"
           >
             <Bold className="h-3.5 w-3.5" />
           </button>
@@ -218,7 +218,7 @@ export const NoteEditor: React.FC<NoteEditorProps> = ({
             type="button"
             aria-label={focusMode ? 'Exit focus mode' : 'Focus mode'}
             onClick={onToggleFocus}
-            className="rounded-lg border border-white/5 bg-white/[0.04] p-2 text-muted-foreground transition-colors hover:text-foreground"
+            className="rounded-lg border border-white/5 bg-white/[0.04] p-2 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97]"
           >
             {focusMode ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
           </button>
@@ -227,7 +227,7 @@ export const NoteEditor: React.FC<NoteEditorProps> = ({
             <button
               type="button"
               onClick={() => setMode('write')}
-              className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs capitalize transition-colors ${
+              className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs capitalize transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95 ${
                 mode === 'write'
                   ? 'bg-white/[0.08] text-foreground font-medium'
                   : 'text-muted-foreground hover:text-foreground'
@@ -239,7 +239,7 @@ export const NoteEditor: React.FC<NoteEditorProps> = ({
             <button
               type="button"
               onClick={() => setMode('preview')}
-              className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs capitalize transition-colors ${
+              className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs capitalize transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95 ${
                 mode === 'preview'
                   ? 'bg-white/[0.08] text-foreground font-medium'
                   : 'text-muted-foreground hover:text-foreground'
@@ -263,7 +263,7 @@ export const NoteEditor: React.FC<NoteEditorProps> = ({
             value={body}
             onChange={(e) => setBody(e.target.value)}
             placeholder="Write in Markdown. Fenced code blocks use GitHub Dark colors."
-            className="h-full min-h-[420px] w-full resize-none bg-transparent editor-text font-mono text-code-fg placeholder:text-code-comment focus:outline-none"
+            className="h-full min-h-[420px] w-full resize-none bg-transparent editor-text font-mono text-code-fg placeholder:text-code-comment transition-colors duration-200 focus:outline-none"
             spellCheck={false}
           />
         ) : (
