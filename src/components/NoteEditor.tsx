@@ -123,7 +123,7 @@ export const NoteEditor: React.FC<NoteEditorProps> = ({
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Untitled note"
-          className="min-w-0 flex-1 bg-transparent text-lg font-semibold tracking-tight text-foreground placeholder:text-muted-foreground/60 focus:outline-none"
+          className="min-w-0 flex-1 bg-transparent text-lg font-semibold tracking-tight text-foreground placeholder:text-muted-foreground/60 transition-colors duration-200 focus:outline-none"
         />
 
         <div className="flex items-center gap-1.5">
