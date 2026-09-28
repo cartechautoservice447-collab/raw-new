@@ -107,7 +107,7 @@ export const AuthModal: React.FC = () => {
                 setTab(t);
                 setError(null);
               }}
-              className={`rounded-md px-2.5 py-1.5 text-xs transition-all duration-180 hover:bg-white\/[0.08] hover:text-foreground active:scale-95 font-medium ${
+              className={`rounded-md px-2.5 py-1.5 text-xs transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95 font-medium ${
                 tab === t
                   ? 'bg-white/[0.1] text-foreground'
                   : 'text-muted-foreground hover:text-foreground'
