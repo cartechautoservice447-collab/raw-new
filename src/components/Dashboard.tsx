@@ -193,7 +193,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 onChange={(e) => setCourseCategory(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleCreateCourse()}
                 placeholder="Category (e.g. Programming)"
-                className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-white/15 focus:outline-none"
+                className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors duration-200 focus:border-white/15 focus:outline-none"
               />
             </div>
             <div className="mt-5 flex justify-end gap-2">
