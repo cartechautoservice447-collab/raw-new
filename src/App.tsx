@@ -101,7 +101,7 @@ export const App: React.FC = () => {
         {/* Mobile Slide-over backdrop */}
         {isMobile && sidebarOpen && (
           <div
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity duration-150"
             onClick={() => setSidebarOpen(false)}
           />
         )}
@@ -165,11 +165,12 @@ export const App: React.FC = () => {
         <div
           className={`shrink-0 overflow-hidden transition-all duration-500 ease-out ${
             noteListOpen
-              ? `w-full lg:block lg:w-[330px] ${notesHook.selectedId ? 'hidden' : 'block'}`
-              : 'hidden w-0 opacity-0'
+              ? `w-full opacity-100 lg:block lg:w-[330px] ${notesHook.selectedId ? 'hidden' : 'block'}`
+              : 'w-0 opacity-0 pointer-events-none'
           }`}
         >
           <NoteList
+            key={`${notesHook.filter.kind}-${notesHook.filter.kind === 'collection' ? notesHook.filter.id : ''}-${notesHook.query}`}
             title={listTitle}
             notes={notesHook.visibleNotes}
             collections={notesHook.collections}
@@ -214,7 +215,7 @@ export const App: React.FC = () => {
           type="button"
           aria-label="Show sidebar"
           onClick={() => setSidebarOpen(true)}
-          className="glass-panel animate-panel-in fixed left-5 top-5 z-30 rounded-xl border border-white/10 p-2.5 text-muted-foreground transition-colors hover:text-foreground"
+          className="glass-panel animate-panel-in fixed left-5 top-5 z-30 rounded-xl border border-white/10 p-2.5 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97]"
         >
           <PanelLeftClose className="h-4 w-4 rotate-180" />
         </button>
@@ -225,7 +226,7 @@ export const App: React.FC = () => {
           type="button"
           aria-label="Show note list"
           onClick={() => setNoteListOpen(true)}
-          className="glass-panel animate-panel-in fixed bottom-5 left-5 z-30 rounded-xl border border-white/10 p-2.5 text-muted-foreground transition-colors hover:text-foreground"
+          className="glass-panel animate-panel-in fixed bottom-5 left-5 z-30 rounded-xl border border-white/10 p-2.5 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97]"
         >
           <FileText className="h-4 w-4" />
         </button>
@@ -236,7 +237,7 @@ export const App: React.FC = () => {
         <button
           type="button"
           onClick={handleExitFocus}
-          className="glass-panel animate-panel-in fixed bottom-6 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 px-4 py-2.5 text-xs tracking-[0.12em] text-muted-foreground uppercase transition-colors hover:text-foreground"
+          className="glass-panel animate-panel-in fixed bottom-6 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 px-4 py-2.5 text-xs tracking-[0.12em] text-muted-foreground uppercase transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97]"
         >
           <Minimize2 className="h-3.5 w-3.5" />
           <span>Exit Focus Mode</span>
