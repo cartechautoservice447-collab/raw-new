@@ -94,7 +94,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <button
         type="button"
         onClick={onCreateNote}
-        className="animate-pulse-glow flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-primary px-3 py-2.5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.015] active:scale-[0.985]"
+        onPointerDown={(e) => {
+          const el = e.currentTarget;
+          el.classList.remove('animate-touch-pop');
+          void el.offsetWidth;
+          el.classList.add('animate-touch-pop');
+        }}
+        onAnimationEnd={(e) => {
+          if (e.animationName === 'touch-pop') {
+            e.currentTarget.classList.remove('animate-touch-pop');
+          }
+        }}
+        className="flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-primary px-3 py-2.5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.015] active:scale-[0.985]"
       >
         <Plus className="h-4 w-4" />
         <span>New Note</span>
