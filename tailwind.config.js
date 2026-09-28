@@ -53,6 +53,7 @@ export default {
         240: "240ms",
       },
       animation: {
+        "touch-pop": "touch-pop 0.28s cubic-bezier(0.16, 1, 0.3, 1) both",
         "pulse-glow": "pulse-glow 3.6s ease-in-out infinite",
         "panel-in": "panel-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) both",
         "card-in": "card-in 0.24s cubic-bezier(0.16, 1, 0.3, 1) both",
@@ -62,6 +63,12 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       keyframes: {
+        "touch-pop": {
+          "0%": { transform: "translateY(0) scale(1)" },
+          "38%": { transform: "translateY(-3px) scale(1.025)" },
+          "68%": { transform: "translateY(-1px) scale(1.008)" },
+          "100%": { transform: "translateY(0) scale(1)" },
+        },
         "pulse-glow": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.95" },
