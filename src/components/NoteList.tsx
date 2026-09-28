@@ -35,7 +35,7 @@ export const NoteList: React.FC<NoteListProps> = ({
             type="button"
             aria-label="Collapse note list"
             onClick={onCollapse}
-            className="rounded-lg border border-white/5 bg-white/[0.04] p-1.5 text-muted-foreground transition-colors hover:text-foreground"
+            className="rounded-lg border border-white/5 bg-white/[0.04] p-1.5 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97]"
           >
             <PanelLeftClose className="h-3.5 w-3.5" />
           </button>
@@ -56,11 +56,11 @@ export const NoteList: React.FC<NoteListProps> = ({
                 key={note.id}
                 type="button"
                 onClick={() => onSelect(note.id)}
-                style={{ animationDelay: `${Math.min(index, 10) * 35}ms` }}
-                className={`group liquid-surface animate-card-in w-full rounded-xl border p-4 text-left transition-all duration-300 ${
+                style={{ animationDelay: `${Math.min(index, 10) * 30}ms` }}
+                className={`group liquid-surface animate-card-in w-full rounded-xl border p-4 text-left transition-all duration-240 ${
                   isActive
                     ? 'border-accent/40 bg-white/[0.08] shadow-[0_10px_30px_-18px_rgba(0,0,0,0.9)]'
-                    : 'border-white/5 bg-white/[0.03] hover:-translate-y-0.5 hover:scale-[1.015] hover:border-white/15 hover:bg-white/[0.06]'
+                    : 'border-white/5 bg-white/[0.03] hover:-translate-y-0.5 hover:scale-[1.01] hover:border-white/15 hover:bg-white/[0.06] active:scale-[0.99]'
                 }`}
               >
                 <div className="flex items-start justify-between gap-3">
@@ -82,7 +82,7 @@ export const NoteList: React.FC<NoteListProps> = ({
                         onToggleFavorite(note.id);
                       }
                     }}
-                    className="shrink-0 rounded-md p-1 text-muted-foreground transition-colors hover:text-foreground"
+                    className="shrink-0 rounded-md p-1 text-muted-foreground transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95"
                   >
                     <Star
                       className={`h-3.5 w-3.5 ${

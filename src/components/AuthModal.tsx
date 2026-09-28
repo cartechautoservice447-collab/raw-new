@@ -74,7 +74,7 @@ export const AuthModal: React.FC = () => {
           type="button"
           onClick={handleGoogle}
           disabled={submitting}
-          className="mt-5 flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.06] px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-white/[0.1] disabled:opacity-60"
+          className="mt-5 flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.06] px-3 py-2.5 text-sm font-medium text-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97] disabled:opacity-60"
         >
           <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
             <path
@@ -107,7 +107,7 @@ export const AuthModal: React.FC = () => {
                 setTab(t);
                 setError(null);
               }}
-              className={`rounded-md px-2.5 py-1.5 text-xs transition-colors font-medium ${
+              className={`rounded-md px-2.5 py-1.5 text-xs transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95 font-medium ${
                 tab === t
                   ? 'bg-white/[0.1] text-foreground'
                   : 'text-muted-foreground hover:text-foreground'
@@ -129,7 +129,7 @@ export const AuthModal: React.FC = () => {
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="glassuser"
                 autoComplete="username"
-                className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-white/15 focus:outline-none"
+                className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors duration-200 focus:border-white/15 focus:outline-none"
               />
             </div>
           )}
@@ -143,7 +143,7 @@ export const AuthModal: React.FC = () => {
               placeholder="you@example.com"
               autoComplete="email"
               required
-              className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-white/15 focus:outline-none"
+              className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors duration-200 focus:border-white/15 focus:outline-none"
             />
           </div>
 
@@ -156,7 +156,7 @@ export const AuthModal: React.FC = () => {
               placeholder="At least 6 characters"
               autoComplete={tab === 'signup' ? 'new-password' : 'current-password'}
               required
-              className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-white/15 focus:outline-none"
+              className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors duration-200 focus:border-white/15 focus:outline-none"
             />
           </div>
 
@@ -169,7 +169,7 @@ export const AuthModal: React.FC = () => {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 autoComplete="new-password"
                 required
-                className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-white/15 focus:outline-none"
+                className="w-full rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors duration-200 focus:border-white/15 focus:outline-none"
               />
             </div>
           )}
@@ -184,7 +184,7 @@ export const AuthModal: React.FC = () => {
           <button
             type="submit"
             disabled={submitting}
-            className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-primary px-3 py-2.5 text-sm font-medium text-primary-foreground transition-transform duration-200 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60"
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-primary px-3 py-2.5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.015] active:scale-[0.985] disabled:opacity-60"
           >
             {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
             <span>{tab === 'signup' ? 'Create account' : 'Log in'}</span>
@@ -193,7 +193,7 @@ export const AuthModal: React.FC = () => {
           <button
             type="button"
             onClick={continueAsGuest}
-            className="mt-2 flex w-full items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2 text-xs text-muted-foreground transition-colors hover:text-foreground hover:bg-white/[0.05]"
+            className="mt-2 flex w-full items-center justify-center rounded-lg border border-white/5 bg-white/[0.02] px-3 py-2 text-xs text-muted-foreground transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95"
           >
             Explore workspace as Guest
           </button>

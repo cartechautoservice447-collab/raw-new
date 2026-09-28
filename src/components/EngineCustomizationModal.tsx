@@ -125,7 +125,7 @@ export const EngineCustomizationModal: React.FC<EngineCustomizationModalProps> =
           <button
             type="button"
             onClick={() => onOpenChange(false)}
-            className="rounded-lg p-1 text-muted-foreground transition-colors hover:text-foreground hover:bg-white/[0.05]"
+            className="rounded-lg p-1 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.08] hover:text-foreground active:scale-[0.97]"
           >
             <X className="h-4 w-4" />
           </button>
@@ -140,7 +140,7 @@ export const EngineCustomizationModal: React.FC<EngineCustomizationModalProps> =
                   key={item.value}
                   type="button"
                   onClick={() => update({ theme: item.value })}
-                  className={`rounded-md px-2.5 py-1.5 text-xs transition-colors font-medium ${
+                  className={`rounded-md px-2.5 py-1.5 text-xs transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95 font-medium ${
                     settings.theme === item.value
                       ? 'bg-white/[0.1] text-foreground shadow-sm'
                       : 'text-muted-foreground hover:text-foreground'
@@ -163,7 +163,7 @@ export const EngineCustomizationModal: React.FC<EngineCustomizationModalProps> =
                   key={item.value}
                   type="button"
                   onClick={() => applyGlassPreset(item.value)}
-                  className={`rounded-md px-2.5 py-1.5 text-xs transition-colors font-medium ${
+                  className={`rounded-md px-2.5 py-1.5 text-xs transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95 font-medium ${
                     settings.glassPreset === item.value
                       ? 'bg-white/[0.1] text-foreground shadow-sm'
                       : 'text-muted-foreground hover:text-foreground'
@@ -226,12 +226,12 @@ export const EngineCustomizationModal: React.FC<EngineCustomizationModalProps> =
                 role="switch"
                 aria-checked={settings.liquidGlassEnabled}
                 onClick={() => update({ liquidGlassEnabled: !settings.liquidGlassEnabled })}
-                className={`peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                className={`peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                   settings.liquidGlassEnabled ? 'bg-primary' : 'bg-white/[0.1]'
                 }`}
               >
                 <span
-                  className={`pointer-events-none block h-4 w-4 rounded-full bg-white shadow-lg transition-transform ${
+                  className={`pointer-events-none block h-4 w-4 rounded-full bg-white shadow-lg transition duration-200 ${
                     settings.liquidGlassEnabled ? 'translate-x-4' : 'translate-x-0'
                   }`}
                 />
@@ -239,7 +239,7 @@ export const EngineCustomizationModal: React.FC<EngineCustomizationModalProps> =
             </div>
 
             <div
-              className={`space-y-3 pt-1 transition-opacity ${
+              className={`space-y-3 pt-1 transition-opacity duration-200 ${
                 !settings.liquidGlassEnabled ? 'pointer-events-none opacity-40' : ''
               }`}
             >
@@ -301,7 +301,7 @@ export const EngineCustomizationModal: React.FC<EngineCustomizationModalProps> =
                   key={item.value}
                   type="button"
                   onClick={() => update({ motion: item.value })}
-                  className={`rounded-md px-2.5 py-1.5 text-xs transition-colors font-medium ${
+                  className={`rounded-md px-2.5 py-1.5 text-xs transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95 font-medium ${
                     settings.motion === item.value
                       ? 'bg-white/[0.1] text-foreground shadow-sm'
                       : 'text-muted-foreground hover:text-foreground'
@@ -321,7 +321,7 @@ export const EngineCustomizationModal: React.FC<EngineCustomizationModalProps> =
                   key={item.value}
                   type="button"
                   onClick={() => update({ uiFont: item.value })}
-                  className={`rounded-md px-2.5 py-1.5 text-xs transition-colors font-medium ${
+                  className={`rounded-md px-2.5 py-1.5 text-xs transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95 font-medium ${
                     settings.uiFont === item.value
                       ? 'bg-white/[0.1] text-foreground shadow-sm'
                       : 'text-muted-foreground hover:text-foreground'
@@ -374,7 +374,7 @@ export const EngineCustomizationModal: React.FC<EngineCustomizationModalProps> =
           <button
             type="button"
             onClick={reset}
-            className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-xs text-muted-foreground transition-colors hover:text-foreground hover:bg-white/[0.08]"
+            className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-xs text-muted-foreground transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95"
           >
             <RotateCcw className="h-3.5 w-3.5" />
             <span>Reset to defaults</span>

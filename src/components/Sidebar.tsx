@@ -74,7 +74,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           type="button"
           aria-label="Collapse sidebar"
           onClick={onCollapse}
-          className="rounded-lg border border-white/5 bg-white/[0.04] p-2 text-muted-foreground transition-colors hover:text-foreground"
+          className="rounded-lg border border-white/5 bg-white/[0.04] p-2 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97]"
         >
           <PanelLeftClose className="h-3.5 w-3.5" />
         </button>
@@ -94,7 +94,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <button
         type="button"
         onClick={onCreateNote}
-        className="animate-pulse-glow flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-primary px-3 py-2.5 text-sm font-medium text-primary-foreground transition-transform duration-200 hover:scale-[1.02] active:scale-[0.99]"
+        className="animate-pulse-glow flex items-center justify-center gap-2 rounded-lg border border-white/10 bg-primary px-3 py-2.5 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-[1.015] active:scale-[0.985]"
       >
         <Plus className="h-4 w-4" />
         <span>New Note</span>
@@ -107,7 +107,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           value={query}
           onChange={(e) => onQueryChange(e.target.value)}
           placeholder="Search notes"
-          className="w-full rounded-lg border border-white/5 bg-white/[0.04] py-2 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-white/15 focus:outline-none"
+          className="w-full rounded-lg border border-white/5 bg-white/[0.04] py-2 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground/70 transition-colors duration-200 focus:border-white/15 focus:outline-none"
         />
       </div>
 
@@ -162,7 +162,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             type="button"
             aria-label="New collection"
             onClick={() => setIsAddingCol(true)}
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground transition-all duration-180 hover:bg-white/[0.08] hover:text-foreground active:scale-95"
           >
             <Plus className="h-3.5 w-3.5" />
           </button>
@@ -198,7 +198,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     e.stopPropagation();
                     onDeleteCollection(col.id);
                   }}
-                  className="opacity-0 transition-opacity hover:text-destructive group-hover:opacity-100"
+                  className="opacity-0 transition-opacity duration-200 hover:text-destructive group-hover:opacity-100"
                 >
                   <Trash2 className="h-3 w-3" />
                 </button>
@@ -226,7 +226,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 type="button"
                 onClick={handleSaveCollection}
                 aria-label="Save collection"
-                className="text-primary hover:opacity-80"
+                className="text-primary transition-all duration-180 hover:bg-white/[0.08] hover:opacity-80 active:scale-95"
               >
                 <Check className="h-3.5 w-3.5" />
               </button>
@@ -239,7 +239,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <button
         type="button"
         onClick={onOpenSettings}
-        className="flex items-center gap-2.5 rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        className="flex items-center gap-2.5 rounded-lg border border-white/5 bg-white/[0.04] px-3 py-2 text-sm text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-foreground active:scale-[0.97]"
       >
         <Settings className="h-4 w-4" />
         <span>Settings</span>
@@ -262,7 +262,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             aria-label="Log out"
             title="Log out"
             onClick={() => void signOut()}
-            className="rounded-lg border border-white/5 bg-white/[0.04] p-2 text-muted-foreground transition-colors hover:text-destructive"
+            className="rounded-lg border border-white/5 bg-white/[0.04] p-2 text-muted-foreground transition-all duration-200 hover:border-white/15 hover:bg-white/[0.07] hover:text-destructive active:scale-[0.97]"
           >
             <LogOut className="h-3.5 w-3.5" />
           </button>
